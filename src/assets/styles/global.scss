@@ -1,0 +1,78 @@
+@import '~@mozaic-ds/tokens/build/css/_variables.scss';
+
+/** FONTS **/
+$font-regular: '@mozaic-ds/web-fonts/LeroyMerlinSans-Web-Regular' !default;
+$font-light: '@mozaic-ds/web-fonts/LeroyMerlinSans-Web-Light' !default;
+$font-semibold: '@mozaic-ds/web-fonts/LeroyMerlinSans-Web-SemiBold' !default;
+$font-italic: '@mozaic-ds/web-fonts/LeroyMerlinSans-Web-Italic' !default;
+$font-italic-light: '@mozaic-ds/web-fonts/LeroyMerlinSans-Web-LightItalic' !default;
+$font-italic-semibold: '@mozaic-ds/web-fonts/LeroyMerlinSans-Web-SemiBoldItalic' !default;
+
+
+@mixin addFont($name, $property, $style, $weight) {
+  font-family: $name;
+  src: url('#{$property}.woff') format('woff'), url('#{$property}.woff2') format('woff2');
+  font-style: $style;
+  font-weight: $weight;
+}
+
+@font-face { @include addFont('LM-Regular', $font-regular, normal, normal); }
+@font-face { @include addFont('LM-Regular', $font-light, normal, lighter); }
+@font-face { @include addFont('LM-Regular', $font-semibold, normal, bold); }
+@font-face {  @include addFont('LM-Regular', $font-italic, italic, normal); }
+@font-face { @include addFont('LM-Regular', $font-italic-light, italic, lighter); }
+@font-face { @include addFont('LM-Regular', $font-italic-semibold, italic, bold); }
+
+/** SCROLLBAR STYLE **/
+@mixin scroll {
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+    background-color: #F5F5F5;
+  }
+
+  &::-webkit-scrollbar{
+    width: 6px;
+    background-color: $gray-200;
+  }
+
+  &::-webkit-scrollbar-thumb{
+    background-color: $gray-500;
+  }
+}
+
+/** BODY **/
+body{
+  width: 100%;
+  min-width:300px;
+  height: 100vh;
+  overflow-y: hidden;
+  overflow-x: auto;
+  display: block;
+  position: fixed;
+  top:0;
+  left: 0;
+  bottom:0;
+  right: 0;
+  margin:0;
+  padding: 0;
+}
+
+
+/** DATEPICKER WITH MOZAIC LOOK & FEEL **/
+.date-input{
+    .dp__input{
+      border: 1px solid $gray-600;
+      font-size: .875rem;
+      line-height: 1.2857142857;
+      min-height: 2rem;
+      font-family: 'LM-Regular', sans-serif;
+      color: $gray-900;
+      margin-top: -.5rem;
+      
+      &:disabled{
+        cursor: not-allowed;
+        background: $gray-100;
+        border-color: $gray-100;
+      }
+    }
+  }

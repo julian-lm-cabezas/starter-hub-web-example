@@ -12,6 +12,11 @@ export default  mergeConfig(
     define: { 'import.meta.env.VERSION': JSON.stringify(version)},
     resolve: {
       alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) }
+    },
+    css:{
+      preprocessorOptions: {
+        scss: { additionalData: `@import "@/assets/styles/globals.scss";` }
+      }
     }
   }),
   defineTestConfig({
