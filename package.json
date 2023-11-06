@@ -1,18 +1,21 @@
 {
   "name": "starter-hub-web-template",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "vite",
-    "build": "run-p type-check \"build-only {@}\" --",
+    "start": "vite",
+    "build": "vite build",
     "preview": "vite preview",
-    "test:unit": "vitest",
-    "build-only": "vite build",
-    "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false"
+    "test": "vitest"
   },
   "dependencies": {
+    "@mozaic-ds/vue-3": "^0.55.1",
+    "@vuepic/vue-datepicker": "github:vuepic/vue-datepicker",
+    "axios": "^1.6.0",
+    "date-fns": "^2.30.0",
     "vue": "^3.3.4",
-    "vue-router": "^4.2.5"
+    "vue-router": "^4.2.5",
+    "vue3-i18n": "^1.1.5"
   },
   "devDependencies": {
     "@tsconfig/node18": "^18.2.2",
