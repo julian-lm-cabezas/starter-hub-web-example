@@ -14,11 +14,20 @@
   "exclude": ["node_modules"],
   "compilerOptions": {
     "composite": true,
-    "module": "ESNext",
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
     "moduleResolution": "Bundler",
     "types": ["node", "jsdom"],
     "experimentalDecorators": true,
     "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "useDefineForClassFields": true,
+    "sourceMap": true,
+    "verbatimModuleSyntax":false,
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*","!tests/*"]

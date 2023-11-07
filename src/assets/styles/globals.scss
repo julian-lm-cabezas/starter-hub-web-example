@@ -1,4 +1,4 @@
-@import '~@mozaic-ds/tokens/build/css/_variables.scss';
+@import "@mozaic-ds/tokens/build/css/_variables";
 
 /** FONTS **/
 $font-regular: '@mozaic-ds/web-fonts/LeroyMerlinSans-Web-Regular' !default;
@@ -7,7 +7,6 @@ $font-semibold: '@mozaic-ds/web-fonts/LeroyMerlinSans-Web-SemiBold' !default;
 $font-italic: '@mozaic-ds/web-fonts/LeroyMerlinSans-Web-Italic' !default;
 $font-italic-light: '@mozaic-ds/web-fonts/LeroyMerlinSans-Web-LightItalic' !default;
 $font-italic-semibold: '@mozaic-ds/web-fonts/LeroyMerlinSans-Web-SemiBoldItalic' !default;
-
 
 @mixin addFont($name, $property, $style, $weight) {
   font-family: $name;
@@ -23,6 +22,21 @@ $font-italic-semibold: '@mozaic-ds/web-fonts/LeroyMerlinSans-Web-SemiBoldItalic'
 @font-face { @include addFont('LM-Regular', $font-italic-light, italic, lighter); }
 @font-face { @include addFont('LM-Regular', $font-italic-semibold, italic, bold); }
 
+/*** BACKGROUND ***/
+#bg{
+  position: fixed;
+  width:100%;
+  height: 100vh;
+  top:0;
+  left: 0;
+  z-index: -10;
+  background: $color-grey-400;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: .3;
+}
+
+
 /** SCROLLBAR STYLE **/
 @mixin scroll {
   &::-webkit-scrollbar-track {
@@ -32,47 +46,52 @@ $font-italic-semibold: '@mozaic-ds/web-fonts/LeroyMerlinSans-Web-SemiBoldItalic'
 
   &::-webkit-scrollbar{
     width: 6px;
-    background-color: $gray-200;
+    background-color: $color-grey-200;
   }
 
   &::-webkit-scrollbar-thumb{
-    background-color: $gray-500;
+    background-color: $color-grey-500;
   }
 }
 
-/** BODY **/
-body{
-  width: 100%;
-  min-width:300px;
+#app {
+  font-family: 'LM-Regular', sans-serif;
+  font-size: 1rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $color-grey-800;
+  width:100%;
   height: 100vh;
-  overflow-y: hidden;
+  max-height: 100vh;
   overflow-x: auto;
-  display: block;
-  position: fixed;
-  top:0;
-  left: 0;
-  bottom:0;
-  right: 0;
+  overflow-y: hidden;
   margin:0;
   padding: 0;
+}
+
+.ml-container{
+  &.ml-container--fluid{
+    padding-right: 0;
+    padding-left: 0;
+  }
 }
 
 
 /** DATEPICKER WITH MOZAIC LOOK & FEEL **/
 .date-input{
     .dp__input{
-      border: 1px solid $gray-600;
+      border: 1px solid $color-grey-600;
       font-size: .875rem;
       line-height: 1.2857142857;
       min-height: 2rem;
       font-family: 'LM-Regular', sans-serif;
-      color: $gray-900;
+      color: $color-grey-900;
       margin-top: -.5rem;
       
       &:disabled{
         cursor: not-allowed;
-        background: $gray-100;
-        border-color: $gray-100;
+        background: $color-grey-100;
+        border-color: $color-grey-100;
       }
     }
   }

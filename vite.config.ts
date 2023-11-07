@@ -11,13 +11,19 @@ export default  mergeConfig(
     server:{ port: 8080 },
     define: { 'import.meta.env.VERSION': JSON.stringify(version)},
     resolve: {
-      alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) }
+      alias: { 
+        '@': fileURLToPath(new URL('./src', import.meta.url)),
+        '~@': fileURLToPath(new URL('./src', import.meta.url)),
+      },
     },
-    css:{
+    css: {
       preprocessorOptions: {
-        scss: { additionalData: `@import "@/assets/styles/globals.scss";` }
-      }
-    }
+        scss: { 
+          includePaths: ['node_modules'],
+          additionalData: `@import "./src/assets/styles/globals";` 
+        },
+      },
+    },
   }),
   defineTestConfig({
     test: {

@@ -1,0 +1,8 @@
+{
+    "loading": "loading",
+    "sidebar":{
+        "home": "Home",
+        "About": "About",
+        "logout": "Logout"
+    }
+}
