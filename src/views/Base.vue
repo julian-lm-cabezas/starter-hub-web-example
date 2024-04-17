@@ -24,7 +24,7 @@ import Sidebar from '@/components/navigation/Sidebar.vue'
 import Navbar from '@/components/navigation/Navbar.vue'
 import Loader from '@/components/Loader.vue'
 // models
-import type { User } from '@/domain/user';
+import { User } from '@/domain/user';
 // services
 import { checkAuth } from '@/services/auth';
 
@@ -32,7 +32,13 @@ const user: Ref<User|undefined> = ref<User>()
 const loading: Ref<boolean> = ref<boolean>(true)
 
 onMounted(async()=> {
-  user.value = await checkAuth()
+  try {
+    user.value = await checkAuth()
+  } catch (error) {
+    // remove this line if not using user
+    user.value = new User({ldap: 'example', name: 'Mr example'})
+    console.error(error)
+  }
   loading.value = false
 })
 
