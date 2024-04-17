@@ -27,16 +27,18 @@ export default  mergeConfig(
   }),
   defineTestConfig({
     test: {
+      globals: true,
       environment: 'jsdom',
       include: ['tests/**/*.test.ts'],
-      exclude: [...configDefaults.exclude, 'e2e/*'],
+      exclude: [...configDefaults.exclude],
       root: fileURLToPath(new URL('./', import.meta.url)),
       alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) },
       coverage:{
         provider: 'v8',
         enabled: true,
         reporter: ['lcov'],
-        reportsDirectory: 'tests/coverage'
+        reportsDirectory: 'tests/coverage',
+        exclude: ['src/domain/**']
         
       }
     }
