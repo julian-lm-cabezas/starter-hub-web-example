@@ -11,10 +11,12 @@
 </template>
 <script lang="ts" setup>
 import { toRefs } from 'vue'
+
 const props = defineProps({
 	msg: { type : String, required: false, default: null},
 	okMsg: {type : String, required: false}
 })
+
 const {msg} = toRefs(props)
 
 </script>

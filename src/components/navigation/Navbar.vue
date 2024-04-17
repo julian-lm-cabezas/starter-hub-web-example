@@ -8,11 +8,13 @@
     </div> 
 </template>
 <script lang="ts" setup>
-import { MHeading } from '@mozaic-ds/vue-3'
 import { useRoute } from 'vue-router'
+// Components
+import { MHeading } from '@mozaic-ds/vue-3'
 
 const route = useRoute()
 
+// get page description
 const getPageName = (): string => route.name?.toString() ?? ''
 
 </script>
@@ -20,8 +22,5 @@ const getPageName = (): string => route.name?.toString() ?? ''
 #navbar{
     background: white;
     border-bottom: 1px solid $color-grey-300;
-    #breadcrum{
-        padding-left: .5rem!important;
-    }
 }
 </style>
