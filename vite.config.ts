@@ -33,13 +33,14 @@ export default  mergeConfig(
       exclude: [...configDefaults.exclude],
       root: fileURLToPath(new URL('./', import.meta.url)),
       alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) },
+      maxConcurrency: 5,
+      minWorkers: 5,
       coverage:{
         provider: 'v8',
         enabled: true,
         reporter: ['lcov'],
         reportsDirectory: 'tests/coverage',
         exclude: ['src/domain/**']
-        
       }
     }
   })

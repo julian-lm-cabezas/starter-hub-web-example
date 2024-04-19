@@ -2,11 +2,12 @@
   "name": "starter-hub-web-template",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "start": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "vitest"
+    "test": "vitest --pool=vmThreads"
   },
   "dependencies": {
     "@mozaic-ds/vue-3": "^0.60.0",
