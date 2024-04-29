@@ -14,7 +14,7 @@
     "@vuepic/vue-datepicker": "^8.4.0",
     "axios": "^1.6.8",
     "date-fns": "^3.6.0",
-    "vue": "^3.4.21",
+    "vue": "^3.4.26",
     "vue-draggable-next": "^2.2.1",
     "vue-router": "^4.3.0",
     "vue3-i18n": "^1.1.5"
