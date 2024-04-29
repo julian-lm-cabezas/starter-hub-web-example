@@ -10,7 +10,7 @@
     "test": "vitest --pool=vmThreads"
   },
   "dependencies": {
-    "@mozaic-ds/vue-3": "^0.60.0",
+    "@mozaic-ds/vue-3": "^0.62.0",
     "@vuepic/vue-datepicker": "^8.4.0",
     "axios": "^1.6.8",
     "date-fns": "^3.6.0",
