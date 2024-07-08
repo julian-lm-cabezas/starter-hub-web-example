@@ -4,6 +4,7 @@
 $font-regular: '@mozaic-ds/web-fonts/LeroyMerlinSans-Web-Regular' !default;
 $font-light: '@mozaic-ds/web-fonts/LeroyMerlinSans-Web-Light' !default;
 $font-semibold: '@mozaic-ds/web-fonts/LeroyMerlinSans-Web-SemiBold' !default;
+$font-bold: '@mozaic-ds/web-fonts/LeroyMerlinSans-Web-Bold' !default;
 $font-italic: '@mozaic-ds/web-fonts/LeroyMerlinSans-Web-Italic' !default;
 $font-italic-light: '@mozaic-ds/web-fonts/LeroyMerlinSans-Web-LightItalic' !default;
 $font-italic-semibold: '@mozaic-ds/web-fonts/LeroyMerlinSans-Web-SemiBoldItalic' !default;
@@ -17,10 +18,11 @@ $font-italic-semibold: '@mozaic-ds/web-fonts/LeroyMerlinSans-Web-SemiBoldItalic'
 
 @font-face { @include addFont('LM-Regular', $font-regular, normal, normal); }
 @font-face { @include addFont('LM-Regular', $font-light, normal, lighter); }
-@font-face { @include addFont('LM-Regular', $font-semibold, normal, bold); }
-@font-face {  @include addFont('LM-Regular', $font-italic, italic, normal); }
+@font-face { @include addFont('LM-Regular', $font-semibold, normal, 600); }
+@font-face { @include addFont('LM-Regular', $font-bold, normal, bold); }
+@font-face { @include addFont('LM-Regular', $font-italic, italic, normal); }
 @font-face { @include addFont('LM-Regular', $font-italic-light, italic, lighter); }
-@font-face { @include addFont('LM-Regular', $font-italic-semibold, italic, bold); }
+@font-face { @include addFont('LM-Regular', $font-italic-semibold, italic, 600); }
 
 /*** BACKGROUND ***/
 #bg{
