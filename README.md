@@ -107,8 +107,7 @@ npm test
 <table>
     <tr>
         <td><h5>Architecture</h5></td>
-        <td><h5>Developer</h5></td>
-        <td><h5>Devops</h5></td>
+        <td colspan="2"><h5>Developer</h5></td>
     </tr>
     <tr>
         <td align="center">
@@ -124,8 +123,8 @@ npm test
             </a>
         </td>
          <td align="center">
-            <a href="https://github.com/DanielAlonsoArias">
-                <img src="https://avatars.githubusercontent.com/u/130563206?v=4?s=100" width="100px;" alt=""/>
+            <a href="https://github.com/jalosaLM">
+                <img src="https://avatars.githubusercontent.com/u/59081582?v=4s=100" width="100px;" alt=""/>
                 <br /><sub><b>Javier Lopez</b></sub>
             </a>
         </td>
