@@ -1,4 +1,4 @@
-# starter-hub-bff-example
+# starter-hub-web-example
 
 
 ![version](https://badgen.net/badge/version/3.0.0/cyan)
