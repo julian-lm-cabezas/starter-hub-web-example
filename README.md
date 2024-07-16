@@ -1,7 +1,7 @@
 # starter-hub-web-example
 
 
-![version](https://badgen.net/badge/version/3.0.0/cyan)
+![version](https://badgen.net/badge/version/1.0.0/cyan)
 ![licence](https://badgen.net/badge/licence/MIT/gray)
 
 VUE SPA web template
