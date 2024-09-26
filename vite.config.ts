@@ -32,6 +32,7 @@ export default  mergeConfig(
       environment: 'jsdom',
       include: ['tests/**/*.test.ts'],
       exclude: [...configDefaults.exclude],
+      setupFiles: ['tests/unit/setup.ts'],
       root: fileURLToPath(new URL('./', import.meta.url)),
       alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) },
       maxConcurrency: 5,
@@ -41,7 +42,7 @@ export default  mergeConfig(
         enabled: true,
         reporter: ['lcov'],
         reportsDirectory: 'tests/coverage',
-        exclude: ['src/domain/**']
+        exclude: ['src/domain/**', '**/*.config.ts', 'tests/**', '**/App.vue', '**/main.ts', '**/services/http.ts']
       }
     }
   })

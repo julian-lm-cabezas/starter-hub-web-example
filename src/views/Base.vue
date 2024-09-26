@@ -1,12 +1,13 @@
 <template>
 <div class="ml-container ml-container--fluid">
-    <template v-if="user">
+    <MOverlayLoader v-if="loading"/>
+    <template v-else-if="user">
       <Sidebar/>
       <div id="content" class="ml-container ml-container--fluid">
         <Navbar/>
         <main class="ml-flexy ml-flexy--space-around">
-          <MOverlayLoader v-if="loading"/>
-          <div v-else class="ml-flexy__col--fill">
+          
+          <div class="ml-flexy__col--fill">
             <router-view/>
           </div>
         </main>

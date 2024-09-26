@@ -15,7 +15,7 @@ import { MHeading } from '@mozaic-ds/vue-3'
 const route = useRoute()
 
 // get page description
-const getPageName = (): string => route.name?.toString() ?? ''
+const getPageName = (): string => route.name.toString()
 
 </script>
 <style lang="scss" scoped>
