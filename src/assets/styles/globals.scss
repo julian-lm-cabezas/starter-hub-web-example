@@ -56,6 +56,56 @@ $font-italic-semibold: '@mozaic-ds/web-fonts/LeroyMerlinSans-Web-SemiBoldItalic'
   }
 }
 
+/** SIDEBAR **/
+
+/** SIDEBAR **/
+.mc-sidebar-lm {
+  background: $color-primary-02-100!important;
+  color: $color-primary-02-900!important;
+
+  svg{ fill: $color-primary-02-900!important;  }
+
+  .mc-sidebar-user {
+    background: $color-primary-02-200!important;
+    .mc-sidebar-user__header{ 
+      color: $color-primary-02-900!important; 
+      &:hover{
+        .mc-sidebar-user__header__information__icon{
+          background: $color-primary-02-300!important;
+        }
+      }
+    }
+    .mc-sidebar-user__header__picture{
+      background: $color-primary-02-500;
+      svg { fill: white!important; }
+    }
+
+    .mc-sidebar-feature{
+      color: $color-primary-02-900!important; 
+      &:hover{ background: $color-primary-02-300; }
+    }
+    
+  }
+  .mc-sidebar__container{
+    .mc-sidebar-segment{
+      color: $color-primary-02-900!important;
+      &.is-selected{ background: $color-primary-02-300!important; }
+      &:hover{ background: $color-primary-02-200; }
+    }
+  }
+
+  .mc-feature-group,.mc-sidebar-feature {
+    color: $color-primary-02-900!important;
+    &.is-selected{ background: $color-primary-02-300!important; }
+    &:hover{ background: $color-primary-02-200!important; }
+   
+  }
+  .mc-sidebar-sub-feature__trigger__label{
+    color: $color-primary-02-900!important;
+  }
+  .mc-sidebar-separator{ border-color: $color-primary-02-900; }
+}
+
 #app {
   font-family: 'LM-Regular', sans-serif;
   font-size: 1rem;

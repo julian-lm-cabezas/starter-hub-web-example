@@ -19,8 +19,9 @@ export default  mergeConfig(
     css: {
       preprocessorOptions: {
         scss: { 
+          api: 'modern-compiler',
           includePaths: ['node_modules'],
-          additionalData: `@import "./src/assets/styles/globals";` 
+          additionalData: `@import "@/assets/styles/globals";` 
         },
       },
     },

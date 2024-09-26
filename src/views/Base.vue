@@ -5,11 +5,9 @@
       <div id="content" class="ml-container ml-container--fluid">
         <Navbar/>
         <main class="ml-flexy ml-flexy--space-around">
-          <div class="ml-flexy__col--fill" v-if="!loading">
+          <MOverlayLoader v-if="loading"/>
+          <div v-else class="ml-flexy__col--fill">
             <router-view/>
-          </div>
-          <div class="ml-flexy__col" v-else>
-            <Loader/>
           </div>
         </main>
       </div>
@@ -20,9 +18,9 @@
 <script lang="ts" setup>
 import { ref, type Ref, onMounted, provide, computed } from 'vue'
 // Components
+import {MOverlayLoader} from '@mozaic-ds/vue-3'
 import Sidebar from '@/components/navigation/Sidebar.vue'
 import Navbar from '@/components/navigation/Navbar.vue'
-import Loader from '@/components/Loader.vue'
 // models
 import { User } from '@/domain/user';
 // services
@@ -44,7 +42,7 @@ onMounted(async()=> {
 
 provide('user', computed(()=> user.value))
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 
 
 #content {
@@ -72,7 +70,4 @@ provide('user', computed(()=> user.value))
   
 }
 
-.full{
-    padding-left:0!important;
-  }
 </style>
