@@ -2,7 +2,11 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 
+// LM theme
 import '@mozaic-ds/vue-3/dist/mozaic-vue.css'
+// Adeo theme
+//import '@mozaic-ds/vue-3/dist/mozaic-vue.adeo.css'
+
 import { createI18n } from 'vue3-i18n'
 
 import * as ES from '@/assets/lang/es.json'

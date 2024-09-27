@@ -1,6 +1,74 @@
 @import "@mozaic-ds/tokens/build/css/_variables";
 
-/** FONTS **/
+@mixin addFont($name, $property, $style, $weight) {
+  font-family: $name;
+  src: url('#{$property}.woff') format('woff'), url('#{$property}.woff2') format('woff2');
+  font-style: $style;
+  font-weight: $weight;
+}
+
+/**************** ADEO THEME ******************/
+/*
+// COLORS 
+$color-secondary-sandgrey-100: #eeedea;
+$color-secondary-sandgrey-200: #dddcd5;
+$color-secondary-sandgrey-300: #c2c1ba;
+$color-secondary-sandgrey-400: #a7a6a0;
+$color-secondary-sandgrey-500: #8c8b85;
+$color-secondary-sandgrey-600: #71706b;
+$color-secondary-sandgrey-700: #555550;
+$color-secondary-sandgrey-800: #3a3936;
+$color-secondary-sandgrey-900: #1e1e1c;
+
+$color-primary-01-100: #d9f0f3;
+$color-primary-01-200: #91d5db;
+$color-primary-01-300: #48bac4;
+$color-primary-01-400: #009eac;
+$color-primary-01-500: #00919f;
+$color-primary-01-600: #007f8c;
+$color-primary-01-700: #006974;
+$color-primary-01-800: #004e57;
+$color-primary-01-900: #002e33;   
+
+// FONTS 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+//BODY & BACKGROUND
+#app {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $color-grey-800;
+  width:100%;
+  height: 100vh;
+  max-height: 100vh;
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin:0;
+  padding: 0;
+}
+
+#bg{
+  position: fixed;
+  width:100%;
+  height: 100vh;
+  top:0;
+  left: 0;
+  z-index: -10;
+  background: $color-secondary-sandgrey-400;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: .3;
+}
+
+/**********************************************************************************************************/
+
+
+/**************** LM THEME ******************/
+
+// FONTS
 $font-regular: '@mozaic-ds/web-fonts/LeroyMerlinSans-Web-Regular' !default;
 $font-light: '@mozaic-ds/web-fonts/LeroyMerlinSans-Web-Light' !default;
 $font-semibold: '@mozaic-ds/web-fonts/LeroyMerlinSans-Web-SemiBold' !default;
@@ -9,12 +77,6 @@ $font-italic: '@mozaic-ds/web-fonts/LeroyMerlinSans-Web-Italic' !default;
 $font-italic-light: '@mozaic-ds/web-fonts/LeroyMerlinSans-Web-LightItalic' !default;
 $font-italic-semibold: '@mozaic-ds/web-fonts/LeroyMerlinSans-Web-SemiBoldItalic' !default;
 
-@mixin addFont($name, $property, $style, $weight) {
-  font-family: $name;
-  src: url('#{$property}.woff') format('woff'), url('#{$property}.woff2') format('woff2');
-  font-style: $style;
-  font-weight: $weight;
-}
 
 @font-face { @include addFont('LM-Regular', $font-regular, normal, normal); }
 @font-face { @include addFont('LM-Regular', $font-light, normal, lighter); }
@@ -24,7 +86,22 @@ $font-italic-semibold: '@mozaic-ds/web-fonts/LeroyMerlinSans-Web-SemiBoldItalic'
 @font-face { @include addFont('LM-Regular', $font-italic-light, italic, lighter); }
 @font-face { @include addFont('LM-Regular', $font-italic-semibold, italic, 600); }
 
-/*** BACKGROUND ***/
+//BODY & BACKGROUND
+#app {
+  font-family: 'LM-Regular', sans-serif;
+  font-size: 1rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $color-grey-800;
+  width:100%;
+  height: 100vh;
+  max-height: 100vh;
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin:0;
+  padding: 0;
+} 
+
 #bg{
   position: fixed;
   width:100%;
@@ -39,7 +116,58 @@ $font-italic-semibold: '@mozaic-ds/web-fonts/LeroyMerlinSans-Web-SemiBoldItalic'
 }
 
 
+// SIDEBAR 
+.mc-sidebar {
+  background: $color-primary-01-600!important;
+  color: $color-primary-02-100!important;
+  svg{ fill: $color-primary-02-100!important;  }
+
+  .mc-sidebar-user {
+    background: $color-primary-01-700!important;
+    .mc-sidebar-user__header{ 
+      color: $color-primary-02-100!important; 
+      &:hover{
+        .mc-sidebar-user__header__information__icon{
+          background: $color-primary-01-600!important;
+        }
+      }
+    }
+    .mc-sidebar-user__header__picture{
+      background: $color-primary-01-800;
+      svg { fill: $color-primary-02-200!important; }
+    }
+
+    .mc-sidebar-feature{
+      color: $color-primary-02-200!important; 
+      &:hover{ background: $color-primary-01-500; }
+    }
+    
+  }
+  .mc-sidebar__container{
+    .mc-sidebar-segment{
+      color: $color-primary-02-100!important;
+      &.is-selected{ background: $color-primary-01-700!important; }
+      &:hover{ background: $color-primary-01-500; }
+    }
+  }
+
+  .mc-feature-group,.mc-sidebar-feature {
+    color: $color-primary-02-100!important;
+    &.is-selected{ background: $color-primary-01-700!important; }
+    &:hover{ background: $color-primary-01-500!important; }
+   
+  }
+  .mc-sidebar-sub-feature__trigger__label{
+    color: $color-primary-02-900!important;
+  }
+  .mc-sidebar-separator{ border-color: $color-primary-02-900; }
+}
+
+/**********************************************************************************************************/
+
+
 /** SCROLLBAR STYLE **/
+
 @mixin scroll {
   &::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
@@ -56,70 +184,7 @@ $font-italic-semibold: '@mozaic-ds/web-fonts/LeroyMerlinSans-Web-SemiBoldItalic'
   }
 }
 
-/** SIDEBAR **/
-
-/** SIDEBAR **/
-.mc-sidebar-lm {
-  background: $color-primary-02-100!important;
-  color: $color-primary-02-900!important;
-
-  svg{ fill: $color-primary-02-900!important;  }
-
-  .mc-sidebar-user {
-    background: $color-primary-02-200!important;
-    .mc-sidebar-user__header{ 
-      color: $color-primary-02-900!important; 
-      &:hover{
-        .mc-sidebar-user__header__information__icon{
-          background: $color-primary-02-300!important;
-        }
-      }
-    }
-    .mc-sidebar-user__header__picture{
-      background: $color-primary-02-500;
-      svg { fill: white!important; }
-    }
-
-    .mc-sidebar-feature{
-      color: $color-primary-02-900!important; 
-      &:hover{ background: $color-primary-02-300; }
-    }
-    
-  }
-  .mc-sidebar__container{
-    .mc-sidebar-segment{
-      color: $color-primary-02-900!important;
-      &.is-selected{ background: $color-primary-02-300!important; }
-      &:hover{ background: $color-primary-02-200; }
-    }
-  }
-
-  .mc-feature-group,.mc-sidebar-feature {
-    color: $color-primary-02-900!important;
-    &.is-selected{ background: $color-primary-02-300!important; }
-    &:hover{ background: $color-primary-02-200!important; }
-   
-  }
-  .mc-sidebar-sub-feature__trigger__label{
-    color: $color-primary-02-900!important;
-  }
-  .mc-sidebar-separator{ border-color: $color-primary-02-900; }
-}
-
-#app {
-  font-family: 'LM-Regular', sans-serif;
-  font-size: 1rem;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: $color-grey-800;
-  width:100%;
-  height: 100vh;
-  max-height: 100vh;
-  overflow-x: auto;
-  overflow-y: hidden;
-  margin:0;
-  padding: 0;
-}
+/** CONTAINER **/
 
 .ml-container{
   &.ml-container--fluid{
@@ -130,6 +195,7 @@ $font-italic-semibold: '@mozaic-ds/web-fonts/LeroyMerlinSans-Web-SemiBoldItalic'
 
 
 /** DATEPICKER WITH MOZAIC LOOK & FEEL **/
+
 .date-input{
     .dp__input{
       border: 1px solid $color-grey-600;
